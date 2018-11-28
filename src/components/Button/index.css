@@ -1,0 +1,18 @@
+.ParrentButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Button {
+  background: gray;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.Delete {
+  background: red;
+}

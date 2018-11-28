@@ -1,0 +1,12 @@
+.Transcript {
+  border: 2px solid #CACACA;
+  padding: 5px;
+}
+.Question{
+  border: 2px solid #CACACA;
+  padding: 5px;
+  margin-top: 10px;
+}
+.TranscriptItem {
+  border: 1px solid #CACACA;
+}

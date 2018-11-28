@@ -1,0 +1,18 @@
+.Home {
+  display: inline-block;
+  text-align: center;
+}
+.CategoryItem{
+  border: 1px solid;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.CategoryTitle{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.CategoryDescription{
+  font-size: 20px;
+}

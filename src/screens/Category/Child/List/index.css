@@ -1,0 +1,14 @@
+.Item {
+  border: 1px solid;
+  margin-top: 2px;
+  padding-left: 10px;
+}
+.LeftItem {
+  width: 50%;
+  display: inline-block;
+}
+
+.RightItem {
+  width: 50%;
+  display: inline-block;
+}
