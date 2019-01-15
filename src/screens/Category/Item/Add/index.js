@@ -404,7 +404,34 @@ export default class index extends Component {
     this.setState({ listQuestion: arr });
   };
 
+  onClickDeleteTranscriptItem(index) {
+    const listTranscript = this.state.listTranscript;
+    listTranscript.splice(index,1);
+    this.setState({ listTranscript });
+  }
+
+  onDeleteAnswersItem(index,indexAnswer) {
+    console.log('List question:', this.state.listQuestion);
+    console.log('Delete answers item:', index, ', indexansers:', indexAnswer);
+    const listQuestion = this.state.listQuestion;
+    const itemQuestion = listQuestion[index];
+    const answers = itemQuestion.answers;
+    answers.splice(indexAnswer,1);
+    itemQuestion.answers = answers;
+    listQuestion[index] = itemQuestion;
+    this.setState({
+      listQuestion
+    });
+  }
+
+  deleteQuestionItm(index){
+    const listQuestion = this.state.listQuestion;
+    listQuestion.splice(index,1);
+    this.setState({ listQuestion });
+  }
+
   render() {
+    console.log('List transcript:', this.state.listTranscript);
     return (
       <div>
         <h2>{this.state.categoryName}</h2>
@@ -435,28 +462,34 @@ export default class index extends Component {
           }
         />
         <div className="Transcript">
-          <Button onClicked={this.addTranscript}>Add Transcripts</Button>
           {this.state.listTranscript.map((item, index) => (
             <div className="TranscriptItem">
-              <Input
-                elementType={item.name.elementType}
-                elementConfig={item.name.elementConfig}
-                value={item.name.value}
-                changed={event => this.onChangeHandleName(index, event)}
-              />
-              <Input
-                elementType={item.content.elementType}
-                elementConfig={item.content.elementConfig}
-                value={item.content.value}
-                changed={event => this.onChangeHandleContent(index, event)}
-              />
+              <div className="TranscriptItemLeft">
+                <Input
+                  elementType={item.name.elementType}
+                  elementConfig={item.name.elementConfig}
+                  value={item.name.value}
+                  changed={event => this.onChangeHandleName(index, event)}
+                />
+                <Input
+                  elementType={item.content.elementType}
+                  elementConfig={item.content.elementConfig}
+                  value={item.content.value}
+                  changed={event => this.onChangeHandleContent(index, event)}
+                />
+              </div>
+              <div className="TranscriptItemRight">
+                <p onClick={() => this.onClickDeleteTranscriptItem(index)}>Delete</p>
+              </div>
             </div>
           ))}
+           <Button onClicked={this.addTranscript}>Add Transcripts</Button>
         </div>
 
         {this.state.listQuestion.map((item, index) => (
           <div className="Question">
-            <h4>Question{index + 1}</h4>
+            <h4 style={{ marginTop: 0, marginBottom: 0}}>Question{index + 1}</h4>
+            <p className="delete-question" onClick={() => this.deleteQuestionItm(index)}>Delete</p>
             <Input
               elementType={item.question.elementType}
               elementConfig={item.question.elementConfig}
@@ -465,6 +498,7 @@ export default class index extends Component {
             />
             {item.answers.map((itemAns, indexAnswer) => (
               <div className="TranscriptItem">
+                <div className="TranscriptItemLeft">
                 <input
                   type="checkbox"
                   checked={itemAns.checked}
@@ -488,6 +522,10 @@ export default class index extends Component {
                     this.onChangeHandleAnswerValue(index, indexAnswer, event)
                   }
                 />
+                </div>
+                <div className="TranscriptItemRight">
+                  <p onClick={() => this.onDeleteAnswersItem(index,indexAnswer)}>Delete</p>
+                </div>
               </div>
             ))}
             <Button onClicked={() => this.addAnswer(index)}>Add Answers</Button>

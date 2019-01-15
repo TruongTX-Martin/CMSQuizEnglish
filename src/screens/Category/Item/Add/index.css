@@ -7,6 +7,31 @@
   padding: 5px;
   margin-top: 10px;
 }
+.TranscriptItemLeft{
+  width: 90%;
+}
+.TranscriptItemRight{
+  display: flex;
+  align-items: center;
+}
+.TranscriptItemRight p{
+  color: red;
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
+}
 .TranscriptItem {
   border: 1px solid #CACACA;
+  border-radius: 10px;
+  background-color: slategrey;
+  margin-top: 10px;
+  display: flex;
+}
+.delete-question{
+  margin-top: 0px;
+    margin-bottom: 0px;
+    color: red;
+    text-decoration: underline;
+    margin-left: 5px;
+    cursor: pointer;
 }
