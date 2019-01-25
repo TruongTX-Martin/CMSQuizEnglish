@@ -15,7 +15,7 @@
   align-items: center;
 }
 .TranscriptItemRight p{
-  color: red;
+  color: #da0808;
   text-decoration: underline;
   font-weight: bold;
   cursor: pointer;
@@ -23,7 +23,6 @@
 .TranscriptItem {
   border: 1px solid #CACACA;
   border-radius: 10px;
-  background-color: slategrey;
   margin-top: 10px;
   display: flex;
 }

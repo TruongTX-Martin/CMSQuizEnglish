@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 import Input from '../../../../components/Input';
 import Button from '../../../../components/Button';
+import $ from 'jquery'
+import axios from 'axios';
 import './index.css';
 
 export default class index extends Component {
@@ -146,7 +148,7 @@ export default class index extends Component {
           });
         }
       });
-  }
+  }q
 
   getCategoryName() {
     this.database
@@ -291,6 +293,7 @@ export default class index extends Component {
     this.props.history.goBack();
   }
 
+
   addTranscript() {
     const item = {
       name: {
@@ -431,7 +434,6 @@ export default class index extends Component {
   }
 
   render() {
-    console.log('List transcript:', this.state.listTranscript);
     return (
       <div>
         <h2>{this.state.categoryName}</h2>
