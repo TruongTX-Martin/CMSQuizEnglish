@@ -58,9 +58,9 @@ export default class index extends Component {
   }
 
   onAddNewItem() {
-    this.props.history.push(
-      `/category/item/add/${this.props.match.params.childId}`
-    );
+    // this.props.history.push(
+    //   `/category/item/add/${this.props.match.params.childId}`
+    // );
   }
 
   onDeleteItem(item) {
@@ -100,7 +100,7 @@ export default class index extends Component {
         </div>
         <div className="RightItem">
           <Button btnStyle="Delete" 
-          onClicked={() => this.onDeleteItem(item)}
+          // onClicked={() => this.onDeleteItem(item)}
           >Delete</Button>
         </div>
       </div>

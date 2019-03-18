@@ -104,7 +104,7 @@ export default class index extends Component {
         <div className="RightItem">
           <Button
             btnStyle="Delete"
-            onClicked={() => this.onDeleteCategory(category)}
+            // onClicked={() => this.onDeleteCategory(category)}
           >
             Delete
           </Button>

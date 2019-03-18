@@ -533,8 +533,12 @@ export default class index extends Component {
             <Button onClicked={() => this.addAnswer(index)}>Add Answers</Button>
           </div>
         ))}
-        <Button onClicked={this.addQuestion}>Add Question</Button>
-        <Button onClicked={this.addItem}>
+        <Button 
+        // onClicked={this.addQuestion}
+        >Add Question</Button>
+        <Button 
+        // onClicked={this.addItem}
+        >
           {this.state.type === 'update' ? 'Submit Edit' : 'Add Item'}
         </Button>
       </div>
