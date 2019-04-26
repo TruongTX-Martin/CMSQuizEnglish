@@ -19,9 +19,9 @@ export default class index extends Component {
   }
 
   onAddNew = () => {
-    this.props.history.push(
-      `/category/child/add/${this.props.match.params.categoryId}`
-    );
+    // this.props.history.push(
+    //   `/category/child/add/${this.props.match.params.categoryId}`
+    // );
   };
 
   componentDidMount() {
@@ -102,12 +102,12 @@ export default class index extends Component {
           </NavLink>
         </div>
         <div className="RightItem">
-          <Button
+          {/* <Button
             btnStyle="Delete"
             onClicked={() => this.onDeleteCategory(category)}
           >
             Delete
-          </Button>
+          </Button> */}
         </div>
       </div>
     );

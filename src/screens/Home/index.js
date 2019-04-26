@@ -55,7 +55,7 @@ export default class index extends Component {
   }
 
   onAddNew = () => {
-    this.props.history.push('/category/add');
+    // this.props.history.push('/category/add');
   };
 
   render() {
